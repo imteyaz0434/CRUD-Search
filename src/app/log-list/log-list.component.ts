@@ -10,8 +10,8 @@ import { LogService } from '../../app/services/log.service';
 })
 export class LogListComponent implements OnInit {
   logs: Log[];
-  filterData:Log[];
-  originalLog:Log[];
+  filterData;
+  originalLog;
   constructor(public LogService:LogService, private router:Router) { }
 
   ngOnInit() {
@@ -20,10 +20,9 @@ export class LogListComponent implements OnInit {
     this.originalLog = this.logs;
 
   }
-  deleteLog(log: Log): void { 
+  deleteLog(log: Log[]): void { 
     let con = confirm("Are you sure to delete");
     if(con){
-      //console.log(con);
       this.LogService.deleteLog(log);
     } 
   }  
