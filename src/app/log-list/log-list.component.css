@@ -1,0 +1,12 @@
+.alert{
+    color: red;
+}
+.deco{
+    margin: 0px 10px;
+    padding: 0px 6px;
+    cursor: pointer;
+    color: brown;
+}
+tr{
+    border-color: brown;
+}

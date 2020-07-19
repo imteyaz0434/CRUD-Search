@@ -1,0 +1,40 @@
+<div class="col-md-12">  
+    <h2 class="text-center">{{empformlabel}}</h2>  
+    <form [formGroup]="addForm" novalidate class="form">  
+    
+      <div class="form-group">  
+        <label for="logName">Name:</label>  
+        <input formControlName="name" placeholder="Name" name="logName" class="form-control" id="logName">  
+        <div class="alert  alert-danger" *ngIf="addForm.get('name').hasError('required') && addForm.get('name').touched">  
+           Name is required  
+        </div>  
+      </div>  
+    
+      <div class="form-group">  
+        <label for="dob">DOB</label>  
+        <input type="date" formControlName="dateOfBirth" name="dateOfBirth" class="form-control" id="dateOfBirth">  
+        <div class="alert  alert-danger" *ngIf="addForm.get('dateOfBirth').hasError('required') && addForm.get('dateOfBirth').touched">  
+          DOB required.  
+        </div>  
+      </div>  
+ 
+      <div class="form-group">  
+        <label for="place">Place</label>  
+        <input formControlName="place" placeholder="Placee" name="place" class="form-control" id="place">  
+        <div class="alert  alert-danger" *ngIf=" addForm.get('place').hasError('required') && addForm.get('place').touched">  
+          Place is required   
+        </div>  
+      </div>
+      <div class="form-group">  
+        <label for="intrest">Intrest:</label>  
+        <input formControlName="intrest" placeholder="Intrest" name="intrest" class="form-control" id="intrest">  
+        <div class="alert  alert-danger" *ngIf=" addForm.get('intrest').hasError('required') && addForm.get('intrest').touched">  
+          Intrest is required  
+        </div>  
+      </div>
+      <button class="btn btn-success center" [disabled]='addForm.invalid' *ngIf="btnvisibility" (click)="onSubmit()">Save</button>  
+      <button class="btn btn-success center" [disabled]='addForm.invalid' *ngIf="!btnvisibility" (click)="onUpdate()">Update</button>  
+    
+      <!-- <p>Form value: {{ addForm.value | json }}</p>   -->
+    </form>  
+  </div>

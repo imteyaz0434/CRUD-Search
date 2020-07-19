@@ -1,0 +1,34 @@
+<div class="col-md-12">  
+  <h2 class="text-center"> User Details</h2>  
+  <input type="text" id="myInput" (keyup)="search($event.target.value)" placeholder="Search for names..">
+  <div class="table-responsive table-container">  
+    <table class="table">  
+      <thead>  
+        <tr>  
+          <th>Name</th>  
+          <th>DOB</th>  
+          <th>Age</th>  
+          <th>Place</th> 
+          <th>Intrest</th> 
+        </tr>  
+      </thead>  
+      <tbody>  
+        <tr *ngIf='originalLog==""'>
+          <h6 class="alert">No Data Found</h6>
+        </tr>
+        <tr *ngFor="let log of originalLog">  
+          <td class="hidden">{{log.id}}</td>  
+          <td>{{log.name}}</td>  
+          <td>{{log.dateOfBirth  | date }}</td>  
+          <td>{{log.dateOfBirth | date | ageCal }}</td> 
+          <td>{{log.place}}</td> 
+          <td>{{log.intrest}}</td>  
+          <td>  
+            <i class="fas fa-trash deco" (click)="deleteLog(log)"></i> 
+            <i class="fas fa-edit deco" (click)="editLog(log)"></i>
+          </td>  
+        </tr>  
+      </tbody>  
+    </table>  
+  </div>  
+</div>  

@@ -1,0 +1,14 @@
+.right{
+    float: right;
+}
+.adjust{
+    display: block;
+    margin: auto;
+    background-color:lavender ; 
+    height: 600px;
+    opacity: 0.8;
+}
+.control{
+    border:1px #eee;
+    background-image: url(../assets/images.jpg);
+}
